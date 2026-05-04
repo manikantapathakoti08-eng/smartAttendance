@@ -120,7 +120,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-sky-900/10"
+          className="relative w-full max-w-2xl glass-modal overflow-hidden"
         >
           {/* Header */}
           <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">

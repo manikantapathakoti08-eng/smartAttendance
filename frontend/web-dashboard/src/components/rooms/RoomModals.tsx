@@ -53,7 +53,7 @@ export const RoomViewModal: React.FC<ViewModalProps> = ({ isOpen, onClose, room 
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-lg bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl"
+          className="relative w-full max-w-lg glass-modal overflow-hidden"
         >
           <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-primary/5">
             <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
@@ -185,7 +185,7 @@ export const RoomEditModal: React.FC<EditModalProps> = ({ isOpen, onClose, room,
         />
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
-          className="relative w-full max-w-xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl"
+          className="relative w-full max-w-xl glass-modal overflow-hidden"
         >
           <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
             <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
@@ -295,7 +295,7 @@ export const RoomDeleteModal: React.FC<DeleteModalProps> = ({ isOpen, onClose, r
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-          className="relative w-full max-w-md bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl"
+          className="relative w-full max-w-md glass-modal overflow-hidden"
         >
           <div className="p-8 text-center space-y-6">
             <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto border border-accent/20">

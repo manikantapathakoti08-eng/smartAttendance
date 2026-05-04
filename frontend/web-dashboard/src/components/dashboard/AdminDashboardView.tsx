@@ -108,7 +108,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
               </button>
             )}
 
-            <motion.div variants={item} className="flex bg-white p-1 rounded-xl border border-slate-200 h-fit shadow-sm">
+            <motion.div variants={item} className="flex bg-white/50 backdrop-blur-xl p-1 rounded-xl border border-white/50 h-fit shadow-sm">
               <button 
                 onClick={() => setActiveTab("overview")}
                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
@@ -134,7 +134,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
             {/* Card 1: Users/Students */}
-            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+            <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group hover:shadow-xl transition-all">
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Users size={64} className="text-primary" />
               </div>
@@ -153,7 +153,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             </motion.div>
 
             {/* Card 2: Live/Active Today */}
-            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+            <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group hover:shadow-xl transition-all">
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Activity size={64} className="text-sky-500" />
               </div>
@@ -172,7 +172,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             </motion.div>
 
             {/* Card 3: Attendance Rate / Verified Count */}
-            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+            <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group hover:shadow-xl transition-all">
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <CheckCircle size={64} className="text-emerald-500" />
               </div>
@@ -193,7 +193,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
         </div>
 
         {/* Live Velocity Chart */}
-        <motion.div variants={item} className="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm overflow-hidden">
+        <motion.div variants={item} className="glass-card p-8 rounded-3xl overflow-hidden">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-xl font-bold text-slate-900">Live Heartbeat Velocity</h2>
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-black border border-emerald-500/20 uppercase tracking-widest">

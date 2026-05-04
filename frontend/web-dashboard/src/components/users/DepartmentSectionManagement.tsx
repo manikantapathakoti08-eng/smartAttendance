@@ -100,7 +100,7 @@ const DeptModal: React.FC<DeptModalProps> = ({ isOpen, onClose, onSubmit, initia
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      <div className="w-full max-w-md bg-white border border-slate-200 rounded-2xl shadow-2xl p-6">
+      <div className="w-full max-w-md glass-modal p-6">
         <h3 className="text-xl font-bold text-slate-900 mb-6">
           {initialData ? 'Edit Department' : 'New Department'}
         </h3>
@@ -214,7 +214,7 @@ const SectionModal: React.FC<SectionModalProps> = ({ isOpen, onClose, onSubmit, 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      <div className="w-full max-w-md bg-white border border-slate-200 rounded-2xl shadow-2xl p-6">
+      <div className="w-full max-w-md glass-modal p-6">
         <h3 className="text-xl font-bold text-slate-900 mb-6">
           {initialData ? 'Edit Section' : 'New Section'}
         </h3>
@@ -337,7 +337,7 @@ const FacultyListModal: React.FC<FacultyListModalProps> = ({ isOpen, onClose, de
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      <div className="w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+      <div className="w-full max-w-2xl glass-modal overflow-hidden flex flex-col max-h-[80vh]">
         <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-primary/10 to-transparent">
           <div>
             <h3 className="text-xl font-bold text-slate-900 leading-tight">Department Faculty</h3>
@@ -411,7 +411,7 @@ const StudentListModal: React.FC<StudentListModalProps> = ({ isOpen, onClose, se
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-      <div className="w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+      <div className="w-full max-w-2xl glass-modal overflow-hidden flex flex-col max-h-[80vh]">
         <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-emerald-500/10 to-transparent">
           <div>
             <h3 className="text-xl font-bold text-slate-900 leading-tight">Section Students</h3>
@@ -760,7 +760,7 @@ export const DepartmentSectionManagement: React.FC = () => {
               {filteredDepts.map((dept) => (
                 <div 
                   key={dept.id}
-                  className="group relative bg-white border border-slate-200 hover:border-primary/30 rounded-3xl p-6 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-sky-900/5"
+                  className="group relative glass-card hover:border-primary/30 p-6 transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="flex items-start justify-between mb-6">
                     <div className="p-3 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform">
@@ -896,7 +896,7 @@ export const DepartmentSectionManagement: React.FC = () => {
                   {filteredSections.map((section) => (
                     <div 
                       key={section.id}
-                      className="bg-white border border-slate-200 hover:border-emerald-500/30 rounded-3xl p-6 transition-all group relative overflow-hidden shadow-sm hover:shadow-md"
+                      className="glass-card hover:border-emerald-500/30 p-6 transition-all group relative overflow-hidden hover:shadow-md"
                     >
                       <div className="absolute top-4 right-4 p-2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         <button 

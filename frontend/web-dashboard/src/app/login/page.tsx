@@ -87,7 +87,7 @@ export default function LoginPage() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)',
+      background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eef2f7 100%)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -117,11 +117,13 @@ export default function LoginPage() {
       >
         {/* Card */}
         <div style={{
-          background: 'rgba(255, 255, 255, 0.95)',
+          background: 'rgba(255, 255, 255, 0.65)',
           backdropFilter: 'blur(40px)',
-          border: '1px solid rgba(0,0,0,0.05)',
+          WebkitBackdropFilter: 'blur(40px)',
+          border: '1px solid rgba(255,255,255,0.5)',
+          borderTop: '1px solid rgba(255,255,255,0.8)',
           borderRadius: '24px',
-          boxShadow: '0 25px 50px rgba(14,165,233,0.1)',
+          boxShadow: '0 8px 32px rgba(14,165,233,0.06), 0 25px 50px rgba(0,0,0,0.04)',
           padding: '48px 40px',
         }}>
           

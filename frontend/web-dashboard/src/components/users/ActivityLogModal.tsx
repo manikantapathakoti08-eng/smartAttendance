@@ -56,7 +56,7 @@ export const ActivityLogModal: React.FC<ActivityLogModalProps> = ({ isOpen, onCl
           initial={{ opacity: 0, scale: 0.95, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           exit={{ opacity: 0, scale: 0.95, x: 20 }}
-          className="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl h-[80vh] flex flex-col"
+          className="relative w-full max-w-2xl glass-modal overflow-hidden h-[80vh] flex flex-col"
         >
           {/* Header */}
           <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">

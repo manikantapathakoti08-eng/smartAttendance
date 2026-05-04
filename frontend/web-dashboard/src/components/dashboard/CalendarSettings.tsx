@@ -64,7 +64,7 @@ export function CalendarSettings() {
       )}
 
       {isAdding && (
-        <Card className="bg-white border-slate-200 shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 rounded-3xl overflow-hidden">
+        <Card className="glass-card border-white/50 shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 rounded-3xl overflow-hidden">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">

@@ -102,7 +102,7 @@ export function Sidebar() {
     <motion.aside 
       initial={false}
       animate={{ width: isCollapsed ? 80 : 280 }}
-      className="h-screen bg-white border-r border-slate-200 flex flex-col relative shrink-0 z-20 shadow-xl shadow-sky-900/5"
+      className="h-screen glass-sidebar flex flex-col relative shrink-0 z-20"
     >
       <div className="flex items-center justify-between p-6 h-20">
         {!isCollapsed && (
@@ -160,7 +160,7 @@ export function Sidebar() {
 
       {/* User Status Bar */}
       {!isCollapsed && user && (
-        <div className="p-4 mt-auto border-t border-slate-200 bg-slate-50/50 backdrop-blur-sm">
+        <div className="p-4 mt-auto border-t border-white/40">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-700 border border-slate-300">
               {(user.name || 'U').charAt(0)}

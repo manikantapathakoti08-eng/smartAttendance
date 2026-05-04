@@ -199,7 +199,7 @@ export const StudentPromotion: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Step 1: Source Identification */}
         <div className="lg:col-span-12">
-          <Card className="overflow-hidden border-slate-200 bg-white shadow-xl shadow-sky-900/5">
+          <Card className="overflow-hidden glass-card">
              <CardHeader className="bg-slate-50/50 border-b border-slate-100 py-6">
                <div className="flex items-center gap-3">
                   <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold border border-primary/20">1</div>
@@ -325,7 +325,7 @@ export const StudentPromotion: React.FC = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               className="lg:col-span-12"
             >
-               <Card className="overflow-hidden border-primary/20 bg-white shadow-2xl shadow-sky-900/10 ring-1 ring-primary/5">
+               <Card className="overflow-hidden glass-card border-primary/20 ring-1 ring-primary/5">
                  <CardHeader className="bg-primary/5 border-b border-slate-100 py-6">
                     <div className="flex items-center gap-3">
                         <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(14,165,233,0.4)]">2</div>

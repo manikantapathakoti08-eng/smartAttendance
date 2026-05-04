@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
 
   return (
     <header className={cn(
-      'bg-white/80 backdrop-blur-xl border-b border-slate-200 px-6 py-4 sticky top-0 z-30 shadow-xl shadow-sky-900/5',
+      'glass-header px-6 py-4 sticky top-0 z-30',
       className
     )}>
       <div className="flex items-center justify-between">

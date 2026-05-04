@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const baseClasses = 'rounded-2xl transition-all duration-300';
-  const variantClasses = 'bg-white border border-slate-200 shadow-xl';
+  const variantClasses = 'glass-card';
   
   const classes = cn(
     baseClasses,

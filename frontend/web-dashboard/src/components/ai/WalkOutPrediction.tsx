@@ -295,7 +295,7 @@ export const WalkOutPrediction: React.FC<WalkOutPredictionProps> = ({
 
       {/* Risk Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card glass className="bg-white border-slate-100">
+        <Card glass className="glass-card">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-rose-50 rounded-lg">
@@ -317,7 +317,7 @@ export const WalkOutPrediction: React.FC<WalkOutPredictionProps> = ({
           </CardContent>
         </Card>
 
-        <Card glass className="bg-white border-slate-100">
+        <Card glass className="glass-card">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-amber-50 rounded-lg">
@@ -339,7 +339,7 @@ export const WalkOutPrediction: React.FC<WalkOutPredictionProps> = ({
           </CardContent>
         </Card>
 
-        <Card glass className="bg-white border-slate-100">
+        <Card glass className="glass-card">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-emerald-50 rounded-lg">
@@ -356,7 +356,7 @@ export const WalkOutPrediction: React.FC<WalkOutPredictionProps> = ({
           </CardContent>
         </Card>
 
-        <Card glass className="bg-white border-slate-100">
+        <Card glass className="glass-card">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="p-2 bg-primary/10 rounded-lg">
@@ -549,7 +549,7 @@ export const WalkOutPrediction: React.FC<WalkOutPredictionProps> = ({
       {/* Alert Details Modal */}
       {selectedAlert && (
         <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <Card glass className="w-full max-w-2xl max-h-[80vh] overflow-y-auto bg-white border-slate-200 shadow-2xl rounded-3xl">
+          <Card glass className="w-full max-w-2xl max-h-[80vh] overflow-y-auto glass-modal">
             <CardHeader className="border-b border-slate-100">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-bold text-slate-900">

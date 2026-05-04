@@ -148,7 +148,7 @@ export function ScheduleModal({ isOpen, onClose, onSave, editingEntry, rooms, fa
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-4xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-sky-900/10"
+          className="relative w-full max-w-4xl glass-modal overflow-hidden"
         >
           {/* SUCCESS OVERLAY FOR HOLIDAYS */}
           <AnimatePresence>

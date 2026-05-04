@@ -60,7 +60,7 @@ export function TimetableGrid({ entries, onEdit, onDelete, userRole }: Timetable
   }, [entries]);
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+    <div className="overflow-x-auto rounded-xl glass-card">
       {entries.length === 0 ? (
         <div className="p-20 text-center flex flex-col items-center justify-center space-y-4">
           <div className="p-4 rounded-full bg-slate-50 border border-slate-100">

@@ -100,7 +100,7 @@ export const Select: React.FC<SelectProps> = ({
             enterFrom="opacity-0 -translate-y-2"
             enterTo="opacity-100 translate-y-0"
           >
-            <Combobox.Options className="absolute z-[100] mt-2 max-h-60 w-full overflow-auto rounded-xl bg-white py-2 text-base shadow-xl shadow-sky-900/10 border border-slate-200 focus:outline-none sm:text-sm ring-1 ring-slate-100 backdrop-blur-xl">
+            <Combobox.Options className="absolute z-[100] mt-2 max-h-60 w-full overflow-auto rounded-xl bg-white/80 backdrop-blur-2xl py-2 text-base shadow-xl border border-white/50 focus:outline-none sm:text-sm ring-1 ring-white/30">
               {filteredOptions.length === 0 && query !== '' ? (
                 creatable ? (
                   <Combobox.Option
