@@ -42,7 +42,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
   const [loadingHoliday, setLoadingHoliday] = React.useState(false);
 
   const declareSuddenHoliday = async () => {
-    if (!confirm("⚠️ Declare a Sudden Holiday? This will put the AI Monitor into 'Resting Mode' for all future sessions today. (Past attendance will be preserved)")) return;
+    if (!confirm("⚠️ Declare Today as a Holiday? This will put the AI Monitor into 'Resting Mode' for all future sessions today. (Past attendance will be preserved)")) return;
     
     setLoadingHoliday(true);
     try {
@@ -52,7 +52,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
         description: "Sudden Holiday Declared from Dashboard"
       });
       setIsHolidayToday(true);
-      alert("✅ Sudden Holiday Declared. AI Monitor is now in Resting Mode.");
+      alert("✅ Holiday Declared for Today. AI Monitor is now in Resting Mode.");
     } catch (err) {
       console.error("Failed to declare sudden holiday", err);
       alert("❌ Failed to declare sudden holiday.");
@@ -104,7 +104,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
                 className="px-4 py-2 rounded-xl text-xs font-bold transition-all bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500 hover:text-white flex items-center gap-2 group disabled:opacity-50"
               >
                 <AlertTriangle size={14} className="group-hover:animate-bounce" /> 
-                {loadingHoliday ? "Processing..." : "Declare Sudden Holiday"}
+                {loadingHoliday ? "Processing..." : "Declare Today Holiday"}
               </button>
             )}
 
