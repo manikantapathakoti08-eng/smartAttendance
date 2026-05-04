@@ -12,13 +12,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", loading, children, ...props }, ref) => {
     
     const variants = {
-      primary: "bg-violet-600 text-white shadow-[0_0_20px_rgba(124,58,237,0.25)] border border-violet-500/50 hover:bg-violet-500 active:scale-[0.98]",
-      secondary: "bg-[#0F0F16] text-gray-200 hover:bg-[#13131F] border border-gray-800 shadow-lg shadow-black/20",
+      primary: "bg-primary text-white shadow-[0_0_20px_rgba(14,165,233,0.25)] border border-primary/50 hover:bg-primary-hover active:scale-[0.98]",
+      secondary: "bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm",
       danger: "bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-600/20",
-      ghost: "bg-transparent hover:bg-white/5 text-gray-400 hover:text-white transition-colors border border-transparent",
-      glass: "bg-[#0F0F16]/50 backdrop-blur-md hover:bg-[#13131F] text-gray-200 border border-gray-800/50 shadow-sm",
-      success: "bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30",
-      error: "bg-red-500/15 text-red-400 hover:bg-red-500/25 border border-red-500/30",
+      ghost: "bg-transparent hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors border border-transparent",
+      glass: "bg-white/50 backdrop-blur-md hover:bg-white/80 text-slate-900 border border-slate-200 shadow-sm",
+      success: "bg-emerald-500/15 text-emerald-600 hover:bg-emerald-500/25 border border-emerald-500/30",
+      error: "bg-red-500/15 text-red-600 hover:bg-red-500/25 border border-red-500/30",
     };
 
     const sizes = {

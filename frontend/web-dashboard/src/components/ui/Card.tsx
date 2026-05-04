@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const baseClasses = 'rounded-2xl transition-all duration-300';
-  const variantClasses = 'bg-[#0F0F16] border border-[#ffffff10] shadow-2xl';
+  const variantClasses = 'bg-white border border-slate-200 shadow-xl';
   
   const classes = cn(
     baseClasses,
@@ -35,7 +35,7 @@ export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   ...props
 }) => {
-  const classes = cn('px-6 py-4 border-b border-gray-800/50', className);
+  const classes = cn('px-6 py-4 border-b border-slate-100', className);
   
   return (
     <div className={classes} {...props}>
@@ -63,7 +63,7 @@ export const CardTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
   children,
   ...props
 }) => {
-  const classes = cn('text-xl font-bold text-white tracking-tight', className);
+  const classes = cn('text-xl font-bold text-slate-900 tracking-tight', className);
   
   return (
     <h3 className={classes} {...props}>
@@ -77,7 +77,7 @@ export const CardDescription: React.FC<React.HTMLAttributes<HTMLParagraphElement
   children,
   ...props
 }) => {
-  const classes = cn('text-sm text-slate-400', className);
+  const classes = cn('text-sm text-slate-500', className);
   
   return (
     <p className={classes} {...props}>
@@ -91,7 +91,7 @@ export const CardFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   ...props
 }) => {
-  const classes = cn('px-6 py-4 border-t border-gray-800/50', className);
+  const classes = cn('px-6 py-4 border-t border-slate-100', className);
   
   return (
     <div className={classes} {...props}>

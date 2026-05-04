@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #9b51e0;
-  --color-primary-hover: #b472f2;
-  --color-secondary: #2d9cdb;
-  --color-accent: #ff007f;
-  --color-obsidian-900: #0f0920;
-  --color-obsidian-800: #1a103c;
-  --color-obsidian-700: #251758;
+  --color-primary: #0ea5e9;
+  --color-primary-hover: #0284c7;
+  --color-secondary: #0f172a;
+  --color-accent: #e11d48;
+  --color-obsidian-900: #f8fafc;
+  --color-obsidian-800: #ffffff;
+  --color-obsidian-700: #e2e8f0;
 
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-obsidian-900 text-slate-200 antialiased font-sans min-h-screen selection:bg-primary/30;
+    @apply bg-obsidian-900 text-slate-800 antialiased font-sans min-h-screen selection:bg-primary/30;
   }
 }
 

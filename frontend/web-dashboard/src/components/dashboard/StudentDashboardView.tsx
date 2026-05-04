@@ -257,8 +257,8 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
               <Fingerprint size={24} />
             </div>
             <div>
-              <p className="text-white font-bold">Profile Setup Incomplete</p>
-              <p className="text-slate-400 text-xs mt-1">
+              <p className="text-slate-900 font-bold">Profile Setup Incomplete</p>
+              <p className="text-slate-500 text-xs mt-1">
                 Your profile is missing a section assignment or biometric data. You must complete your profile to access all features.
               </p>
             </div>
@@ -278,8 +278,8 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
         className="flex flex-col md:flex-row md:items-end justify-between gap-4"
       >
         <div>
-          <h2 className="text-3xl font-bold text-white tracking-tight">Student Dashboard</h2>
-          <p className="text-slate-400 text-sm mt-1 uppercase tracking-widest font-medium">
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Student Dashboard</h2>
+          <p className="text-slate-500 text-sm mt-1 uppercase tracking-widest font-medium">
             {stats?.departmentName} • Section {stats?.sectionName} • Semester {stats?.semester}
           </p>
         </div>
@@ -298,9 +298,9 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <TrendingUp size={64} className="text-emerald-500" />
               </div>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-wider mb-1">My Attendance Rate</p>
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-1">My Attendance Rate</p>
               <div className="flex items-end gap-3 mb-4">
-                <p className="text-5xl font-black text-white tracking-tighter">{stats?.overallAttendance?.toFixed(1) || '0.0'}%</p>
+                <p className="text-5xl font-black text-slate-900 tracking-tighter">{stats?.overallAttendance?.toFixed(1) || '0.0'}%</p>
                 <div className="flex flex-col mb-1">
                     <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Good Standing</span>
                     <span className="text-[10px] text-slate-500 uppercase tracking-widest">Required: 75%</span>
@@ -320,9 +320,9 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity whitespace-nowrap overflow-hidden">
                 <Clock size={64} className="text-violet-500" />
               </div>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-wider mb-1">Classes This Month</p>
-              <p className="text-5xl font-black text-white tracking-tighter mb-4">
-                {stats?.attendedClasses || 0}<span className="text-slate-600 text-2xl font-light">/{stats?.totalClasses || 0}</span>
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-1">Classes This Month</p>
+              <p className="text-5xl font-black text-slate-900 tracking-tighter mb-4">
+                {stats?.attendedClasses || 0}<span className="text-slate-400 text-2xl font-light">/{stats?.totalClasses || 0}</span>
               </p>
               <div className="flex items-center text-xs text-violet-400">
                 <Link href="/attendance" className="hover:underline flex items-center gap-1 font-bold">
@@ -340,15 +340,15 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
                     <BookOpen size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-white tracking-tight">
+                  <h3 className="text-xl font-black text-slate-900 tracking-tight">
                     {stats?.activeSession ? stats.activeSession.subject : 'No Session Active'}
                   </h3>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
-                    <p className="flex items-center gap-1.5 text-xs text-slate-400 uppercase tracking-widest">
-                        <MapPin size={12} className="text-violet-500" /> {stats?.activeSession?.room?.name || '---'}
+                    <p className="flex items-center gap-1.5 text-xs text-slate-500 uppercase tracking-widest">
+                        <MapPin size={12} className="text-primary" /> {stats?.activeSession?.room?.name || '---'}
                     </p>
-                    <p className="flex items-center gap-1.5 text-xs text-slate-400 uppercase tracking-widest">
-                        <Clock size={12} className="text-violet-500" /> {stats?.activeSession ? `${stats.activeSession.startTime} - ${stats.activeSession.endTime}` : '--:--'}
+                    <p className="flex items-center gap-1.5 text-xs text-slate-500 uppercase tracking-widest">
+                        <Clock size={12} className="text-primary" /> {stats?.activeSession ? `${stats.activeSession.startTime} - ${stats.activeSession.endTime}` : '--:--'}
                     </p>
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export const StudentDashboardView: React.FC<StudentDashboardViewProps> = ({ stat
                                     <CheckCircle2 size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-white tracking-tight">Attendance Verified</p>
+                                    <p className="text-xs font-bold text-slate-900 tracking-tight">Attendance Verified</p>
                                     <p className="text-[10px] text-slate-500 uppercase tracking-widest">Via Mobile Sensor Sync</p>
                                 </div>
                             </div>

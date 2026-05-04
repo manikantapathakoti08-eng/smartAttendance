@@ -67,8 +67,8 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <TrendingUp size={64} className="text-emerald-500" />
               </div>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-wider mb-1">Class Attendance Rate</p>
-              <p className="text-4xl font-bold text-white mb-4">{stats?.attendanceRate?.toFixed(1) || '0.0'}%</p>
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-1">Class Attendance Rate</p>
+              <p className="text-4xl font-bold text-slate-900 mb-4">{stats?.attendanceRate?.toFixed(1) || '0.0'}%</p>
               <div className="flex items-center text-xs text-emerald-400">
                 <span className="bg-emerald-400/10 px-2 py-0.5 rounded-full mr-2">+0.0%</span>
                 Live Optimization
@@ -79,8 +79,8 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
               <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Clock size={64} className="text-violet-500" />
               </div>
-              <p className="text-slate-400 text-sm font-bold uppercase tracking-wider mb-1">Active Sessions</p>
-              <p className="text-4xl font-bold text-white mb-4">{stats?.activeSessions || 0}</p>
+              <p className="text-slate-500 text-sm font-bold uppercase tracking-wider mb-1">Active Sessions</p>
+              <p className="text-4xl font-bold text-slate-900 mb-4">{stats?.activeSessions || 0}</p>
               <div className="flex items-center text-xs text-violet-400">
                 <Link href="/attendance" className="hover:underline flex items-center gap-1">
                   Manage live feed <ArrowRight size={12} />
@@ -92,10 +92,10 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
           <motion.div variants={itemVariants} className="glass-card p-8 bg-gradient-to-br from-violet-600/[0.05] to-transparent border-violet-500/20">
             <div className="flex items-start justify-between mb-8">
               <div>
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-slate-900">
                   {stats?.currentSession ? `Current Session: ${stats.currentSession.courseName}` : 'No Active Session'}
                 </h3>
-                <p className="text-sm text-slate-400 mt-1 uppercase tracking-widest text-[10px]">
+                <p className="text-sm text-slate-500 mt-1 uppercase tracking-widest text-[10px]">
                   {stats?.currentSession ? `${stats.currentSession.roomName}` : 'System Standby'}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               <div className="text-center md:text-left">
                 <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">Present</p>
-                <p className="text-2xl font-bold text-white">{stats?.currentSession?.presentCount || 0}</p>
+                <p className="text-2xl font-bold text-slate-900">{stats?.currentSession?.presentCount || 0}</p>
               </div>
               <div className="text-center md:text-left border-l border-white/5 pl-6">
                 <p className="text-[10px] font-bold text-slate-500 uppercase mb-1">Total</p>
@@ -148,16 +148,16 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
                       {action.icon}
                     </div>
                     <div>
-                      <h5 className="font-bold text-white text-sm tracking-tight">{action.title}</h5>
+                      <h5 className="font-bold text-slate-900 text-sm tracking-tight">{action.title}</h5>
                       <p className="text-[10px] text-slate-500">{action.desc}</p>
                     </div>
                   </div>
                   {action.count !== undefined && action.count > 0 && (
-                    <div className="bg-violet-600 text-white text-[10px] font-black px-2 py-1 rounded-lg shadow-lg shadow-violet-600/30 animate-bounce">
+                    <div className="bg-violet-600 text-slate-900 text-[10px] font-black px-2 py-1 rounded-lg shadow-lg shadow-violet-600/30 animate-bounce">
                       {action.count}
                     </div>
                   )}
-                  <ArrowRight size={14} className="text-slate-600 group-hover:text-white transition-colors" />
+                  <ArrowRight size={14} className="text-slate-600 group-hover:text-slate-900 transition-colors" />
                 </motion.div>
               </Link>
             ))}
@@ -168,7 +168,7 @@ export const FacultyDashboardView: React.FC<FacultyDashboardViewProps> = ({ stat
               <AlertCircle className="text-amber-500 shrink-0" size={18} />
               <div>
                 <p className="text-xs font-bold text-amber-500 uppercase tracking-widest mb-1">System Notice</p>
-                <p className="text-[10px] text-slate-400 leading-relaxed">Identity verification protocols for Hall 402 updated. Ensure Bluetooth scanners are online.</p>
+                <p className="text-[10px] text-slate-500 leading-relaxed">Identity verification protocols for Hall 402 updated. Ensure Bluetooth scanners are online.</p>
               </div>
             </div>
           </Card>

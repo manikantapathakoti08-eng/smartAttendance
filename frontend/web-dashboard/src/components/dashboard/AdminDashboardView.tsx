@@ -85,16 +85,16 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
         )}
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <motion.h1 variants={item} className="text-3xl font-bold text-white mb-2 tracking-tight">
-              {activeTab === "overview" ? "System Overview" : "Academic Calendar"}
-            </motion.h1>
-            <motion.p variants={item} className="text-slate-400">
-              {activeTab === "overview" 
-                ? "Live monitoring of attendance sessions and zero-trust anomalies." 
-                : "Manage institutional holidays and exam schedules."}
-            </motion.p>
-          </div>
+            <div>
+              <motion.h1 variants={item} className="text-3xl font-bold text-slate-900 mb-2 tracking-tight">
+                {activeTab === "overview" ? "System Overview" : "Academic Calendar"}
+              </motion.h1>
+              <motion.p variants={item} className="text-slate-500">
+                {activeTab === "overview" 
+                  ? "Live monitoring of attendance sessions and zero-trust anomalies." 
+                  : "Manage institutional holidays and exam schedules."}
+              </motion.p>
+            </div>
 
           <div className="flex flex-col md:flex-row gap-2">
             {!isHolidayToday && activeTab === "overview" && (
@@ -138,11 +138,11 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
               <Users size={64} className="text-[#9b51e0]" />
             </div>
-            <p className="text-slate-400 text-sm font-medium mb-1">Total Active Entities</p>
+            <p className="text-slate-500 text-sm font-medium mb-1">Total Active Entities</p>
             {loading ? (
               <Skeleton className="h-10 w-24 mb-4" />
             ) : (
-              <p className="text-4xl font-bold text-white mb-4">
+              <p className="text-4xl font-bold text-slate-900 mb-4">
                 <AnimatedCounter value={stats?.totalUsers ?? stats?.totalStudents ?? 0} />
               </p>
             )}
@@ -157,11 +157,11 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
               <Activity size={64} className="text-[#00d2ff]" />
             </div>
-            <p className="text-slate-400 text-sm font-medium mb-1">Active Today</p>
+            <p className="text-slate-500 text-sm font-medium mb-1">Active Today</p>
             {loading ? (
               <Skeleton className="h-10 w-24 mb-4" />
             ) : (
-              <p className="text-4xl font-bold text-white mb-4">
+              <p className="text-4xl font-bold text-slate-900 mb-4">
                 <AnimatedCounter value={stats?.activeToday ?? stats?.activeSessions ?? 0} />
               </p>
             )}
@@ -176,15 +176,15 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
               <CheckCircle size={64} className="text-emerald-500" />
             </div>
-            <p className="text-slate-400 text-sm font-medium mb-1">Avg Reliability / Rate</p>
+            <p className="text-slate-500 text-sm font-medium mb-1">Avg Reliability / Rate</p>
             {loading ? (
               <Skeleton className="h-10 w-24 mb-4" />
             ) : (
-              <p className="text-4xl font-bold text-white mb-4">
+              <p className="text-4xl font-bold text-slate-900 mb-4">
                 <AnimatedCounter value={stats?.attendanceRate ?? 95.5} isPercentage />
               </p>
             )}
-            <div className="flex items-center text-sm text-slate-400">
+            <div className="flex items-center text-sm text-slate-500">
               <span className="mr-2">Optimal Range</span>
             </div>
           </motion.div>
@@ -194,7 +194,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
               <ShieldAlert size={64} className="text-accent" />
             </div>
-            <p className="text-slate-400 text-sm font-medium mb-1">Zero-Trust Anomalies</p>
+            <p className="text-slate-500 text-sm font-medium mb-1">Zero-Trust Anomalies</p>
             {loading ? (
               <Skeleton className="h-10 w-24 mb-4" />
             ) : (
@@ -213,7 +213,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
         {/* Live Velocity Chart */}
         <motion.div variants={item} className="glass-card p-6 overflow-hidden">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-lg font-semibold text-white">Live Heartbeat Velocity</h2>
+            <h2 className="text-lg font-semibold text-slate-900">Live Heartbeat Velocity</h2>
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-[10px] font-bold border border-emerald-500/20 uppercase tracking-widest">
               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
               Monitoring
@@ -224,8 +224,8 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
               <AreaChart data={MOCK_GRAPH_DATA} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#9b51e0" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="#9b51e0" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <XAxis 
@@ -243,7 +243,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
                 <Area 
                   type="monotone" 
                   dataKey="value" 
-                  stroke="#9b51e0" 
+                  stroke="#0ea5e9" 
                   strokeWidth={3} 
                   fillOpacity={1} 
                   fill="url(#colorValue)" 
