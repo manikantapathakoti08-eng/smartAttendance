@@ -44,12 +44,12 @@ export function CalendarSettings() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
             <Calendar className="text-primary" /> Academic Calendar Manager
           </h2>
-          <p className="text-xs text-gray-400 mt-1">Declare holidays and exam seasons to adjust AI monitoring behavior.</p>
+          <p className="text-xs text-slate-500 mt-1 font-medium">Declare holidays and exam seasons to adjust AI monitoring behavior.</p>
         </div>
-        <Button variant="primary" size="sm" onClick={() => setIsAdding(!isAdding)}>
+        <Button variant="primary" size="sm" onClick={() => setIsAdding(!isAdding)} className="px-6 shadow-lg shadow-primary/20 font-bold">
           {isAdding ? 'Cancel' : <><Plus size={16} className="mr-1" /> Add Entry</>}
         </Button>
       </div>
@@ -64,48 +64,48 @@ export function CalendarSettings() {
       )}
 
       {isAdding && (
-        <Card glass className="bg-white/5 border-white/10 animate-in fade-in slide-in-from-top-4 duration-300">
-          <CardContent className="p-6">
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="space-y-1">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Target Date</label>
+        <Card className="bg-white border-slate-200 shadow-xl animate-in fade-in slide-in-from-top-4 duration-300 rounded-3xl overflow-hidden">
+          <CardContent className="p-8">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Target Date</label>
                 <input 
                   type="date" 
                   value={formData.date}
                   onChange={e => setFormData({...formData, date: e.target.value})}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-medium"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-bold"
                   required
                 />
               </div>
 
-              <div className="space-y-1">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Day Type</label>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Day Type</label>
                 <select 
                   value={formData.type}
                   onChange={e => setFormData({...formData, type: e.target.value})}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-2 text-white focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 font-bold"
                   required
                 >
-                  <option value="HOLIDAY" className="bg-[#0F0F16]">Holiday (AI Rest Mode)</option>
-                  <option value="EXAM_DAY" className="bg-[#0F0F16]">Exam Day (No AI Marking)</option>
-                  <option value="SPECIAL_EVENT" className="bg-[#0F0F16]">Special Event</option>
-                  <option value="HALF_DAY" className="bg-[#0F0F16]">Half Day</option>
+                  <option value="HOLIDAY">Holiday (AI Rest Mode)</option>
+                  <option value="EXAM_DAY">Exam Day (No AI Marking)</option>
+                  <option value="SPECIAL_EVENT">Special Event</option>
+                  <option value="HALF_DAY">Half Day</option>
                 </select>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Description</label>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Description</label>
                 <input 
                   type="text" 
                   value={formData.description}
                   onChange={e => setFormData({...formData, description: e.target.value})}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-2 text-white focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 placeholder:text-slate-400 font-medium"
                   placeholder="e.g. Independence Day"
                 />
               </div>
 
               <div className="md:col-span-3 flex justify-end">
-                <Button type="submit" variant="primary" loading={loading}>
+                <Button type="submit" variant="primary" loading={loading} className="px-10 font-bold shadow-lg shadow-primary/20">
                   Save to Calendar
                 </Button>
               </div>
@@ -115,27 +115,27 @@ export function CalendarSettings() {
       )}
 
       {/* AI Behavior Infographic */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="bg-[#7C3AED]/5 border-[#7C3AED]/20">
-          <CardContent className="p-4 flex gap-4">
-            <div className="p-3 bg-[#7C3AED]/20 rounded-2xl text-[#7C3AED] h-fit">
-              <Calendar size={20} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card className="bg-slate-50 border-slate-200 shadow-sm rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+          <CardContent className="p-6 flex gap-4">
+            <div className="p-4 bg-primary/10 rounded-2xl text-primary h-fit">
+              <Calendar size={24} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white mb-1">Holiday Mode (Resting)</h4>
-              <p className="text-xs text-gray-400">Declarations will force the AI monitor into power-saving mode. No sessions will be generated or scanned.</p>
+              <h4 className="text-base font-bold text-slate-900 mb-1">Holiday Mode (Resting)</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">Declarations will force the AI monitor into power-saving mode. No sessions will be generated or scanned.</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-red-500/5 border-red-500/20">
-          <CardContent className="p-4 flex gap-4">
-            <div className="p-3 bg-red-500/20 rounded-2xl text-red-500 h-fit">
-              <Info size={20} />
+        <Card className="bg-red-50 border-red-100 shadow-sm rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+          <CardContent className="p-6 flex gap-4">
+            <div className="p-4 bg-red-500/10 rounded-2xl text-red-600 h-fit">
+              <Info size={24} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white mb-1">Exam Mode (Exemption)</h4>
-              <p className="text-xs text-gray-400">AI will monitor but NOT mark absences. System relies on physical barcode scans for official attendance.</p>
+              <h4 className="text-base font-bold text-slate-900 mb-1">Exam Mode (Exemption)</h4>
+              <p className="text-sm text-slate-500 leading-relaxed">AI will monitor but NOT mark absences. System relies on physical barcode scans for official attendance.</p>
             </div>
           </CardContent>
         </Card>

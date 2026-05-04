@@ -74,8 +74,8 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
                 <Power size={20} />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wider">AI Monitor: Resting Mode Active</h4>
-                <p className="text-xs text-gray-400">Institutional holiday detected. All autonomous scanning is suspended for the day.</p>
+                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">AI Monitor: Resting Mode Active</h4>
+                <p className="text-xs text-slate-500">Institutional holiday detected. All autonomous scanning is suspended for the day.</p>
               </div>
             </div>
             <div className="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-black uppercase tracking-tighter">
@@ -108,11 +108,11 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
               </button>
             )}
 
-            <motion.div variants={item} className="flex bg-white/5 p-1 rounded-xl border border-white/10 h-fit">
+            <motion.div variants={item} className="flex bg-white p-1 rounded-xl border border-slate-200 h-fit shadow-sm">
               <button 
                 onClick={() => setActiveTab("overview")}
                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
-                  activeTab === "overview" ? "bg-primary text-white shadow-lg shadow-primary/20" : "text-slate-400 hover:text-white"
+                  activeTab === "overview" ? "bg-primary text-white shadow-lg shadow-primary/20" : "text-slate-400 hover:text-slate-900 hover:bg-slate-50"
                 }`}
               >
                 <Activity size={16} /> Overview
@@ -120,7 +120,7 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
               <button 
                 onClick={() => setActiveTab("calendar")}
                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
-                  activeTab === "calendar" ? "bg-primary text-white shadow-lg shadow-primary/20" : "text-slate-400 hover:text-white"
+                  activeTab === "calendar" ? "bg-primary text-white shadow-lg shadow-primary/20" : "text-slate-400 hover:text-slate-900 hover:bg-slate-50"
                 }`}
               >
                 <Calendar size={16} /> Calendar
@@ -133,90 +133,90 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           
-          {/* Card 1: Users/Students */}
-          <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Users size={64} className="text-[#9b51e0]" />
-            </div>
-            <p className="text-slate-500 text-sm font-medium mb-1">Total Active Entities</p>
-            {loading ? (
-              <Skeleton className="h-10 w-24 mb-4" />
-            ) : (
-              <p className="text-4xl font-bold text-slate-900 mb-4">
-                <AnimatedCounter value={stats?.totalUsers ?? stats?.totalStudents ?? 0} />
-              </p>
-            )}
-            <div className="flex items-center text-sm text-emerald-400">
-              <span className="bg-emerald-400/10 px-2 py-0.5 rounded-full mr-2">Verified Range</span>
-              System Active
-            </div>
-          </motion.div>
+            {/* Card 1: Users/Students */}
+            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Users size={64} className="text-primary" />
+              </div>
+              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1">Total Active Entities</p>
+              {loading ? (
+                <Skeleton className="h-10 w-24 mb-4" />
+              ) : (
+                <p className="text-4xl font-bold text-slate-900 mb-4">
+                  <AnimatedCounter value={stats?.totalUsers ?? stats?.totalStudents ?? 0} />
+                </p>
+              )}
+              <div className="flex items-center text-xs font-bold text-emerald-600">
+                <span className="bg-emerald-500/10 px-2 py-0.5 rounded-full mr-2">Verified Range</span>
+                System Active
+              </div>
+            </motion.div>
 
-          {/* Card 2: Live/Active Today */}
-          <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Activity size={64} className="text-[#00d2ff]" />
-            </div>
-            <p className="text-slate-500 text-sm font-medium mb-1">Active Today</p>
-            {loading ? (
-              <Skeleton className="h-10 w-24 mb-4" />
-            ) : (
-              <p className="text-4xl font-bold text-slate-900 mb-4">
-                <AnimatedCounter value={stats?.activeToday ?? stats?.activeSessions ?? 0} />
-              </p>
-            )}
-            <div className="flex items-center text-sm text-[#00d2ff]">
-              <span className="bg-[#00d2ff]/10 px-2 py-0.5 rounded-full mr-2">Live Now</span>
-              {stats?.totalScheduledToday ?? 0} Total Sessions
-            </div>
-          </motion.div>
+            {/* Card 2: Live/Active Today */}
+            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Activity size={64} className="text-sky-500" />
+              </div>
+              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1">Active Today</p>
+              {loading ? (
+                <Skeleton className="h-10 w-24 mb-4" />
+              ) : (
+                <p className="text-4xl font-bold text-slate-900 mb-4">
+                  <AnimatedCounter value={stats?.activeToday ?? stats?.activeSessions ?? 0} />
+                </p>
+              )}
+              <div className="flex items-center text-xs font-bold text-sky-600">
+                <span className="bg-sky-500/10 px-2 py-0.5 rounded-full mr-2">Live Now</span>
+                {stats?.totalScheduledToday ?? 0} Total Sessions
+              </div>
+            </motion.div>
 
-          {/* Card 3: Attendance Rate / Verified Count */}
-          <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-              <CheckCircle size={64} className="text-emerald-500" />
-            </div>
-            <p className="text-slate-500 text-sm font-medium mb-1">Avg Reliability / Rate</p>
-            {loading ? (
-              <Skeleton className="h-10 w-24 mb-4" />
-            ) : (
-              <p className="text-4xl font-bold text-slate-900 mb-4">
-                <AnimatedCounter value={stats?.attendanceRate ?? 95.5} isPercentage />
-              </p>
-            )}
-            <div className="flex items-center text-sm text-slate-500">
-              <span className="mr-2">Optimal Range</span>
-            </div>
-          </motion.div>
+            {/* Card 3: Attendance Rate / Verified Count */}
+            <motion.div variants={item} className="bg-white border border-slate-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <CheckCircle size={64} className="text-emerald-500" />
+              </div>
+              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1">Avg Reliability / Rate</p>
+              {loading ? (
+                <Skeleton className="h-10 w-24 mb-4" />
+              ) : (
+                <p className="text-4xl font-bold text-slate-900 mb-4">
+                  <AnimatedCounter value={stats?.attendanceRate ?? 95.5} isPercentage />
+                </p>
+              )}
+              <div className="flex items-center text-xs font-bold text-slate-500">
+                <span className="bg-slate-100 px-2 py-0.5 rounded-full mr-2 uppercase tracking-widest">Optimal Range</span>
+              </div>
+            </motion.div>
 
-          {/* Card 4: Anomalies */}
-          <motion.div variants={item} className="glass-card p-6 relative overflow-hidden group border-accent/20">
-            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-              <ShieldAlert size={64} className="text-accent" />
-            </div>
-            <p className="text-slate-500 text-sm font-medium mb-1">Zero-Trust Anomalies</p>
-            {loading ? (
-              <Skeleton className="h-10 w-24 mb-4" />
-            ) : (
-              <p className="text-4xl font-bold text-accent mb-4">
-                <AnimatedCounter value={stats?.anomalies ?? 0} />
-              </p>
-            )}
-            <div className="flex items-center text-sm text-accent">
-              <span className="bg-accent/10 px-2 py-0.5 rounded-full mr-2">Needs Review</span>
-              System Violations
-            </div>
-          </motion.div>
+            {/* Card 4: Anomalies */}
+            <motion.div variants={item} className="bg-white border border-red-200 p-6 rounded-2xl relative overflow-hidden group shadow-sm hover:shadow-xl transition-all">
+              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <ShieldAlert size={64} className="text-red-500" />
+              </div>
+              <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1">Zero-Trust Anomalies</p>
+              {loading ? (
+                <Skeleton className="h-10 w-24 mb-4" />
+              ) : (
+                <p className="text-4xl font-bold text-red-600 mb-4">
+                  <AnimatedCounter value={stats?.anomalies ?? 0} />
+                </p>
+              )}
+              <div className="flex items-center text-xs font-bold text-red-600">
+                <span className="bg-red-500/10 px-2 py-0.5 rounded-full mr-2">Needs Review</span>
+                System Violations
+              </div>
+            </motion.div>
 
         </div>
 
         {/* Live Velocity Chart */}
-        <motion.div variants={item} className="glass-card p-6 overflow-hidden">
+        <motion.div variants={item} className="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm overflow-hidden">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-lg font-semibold text-slate-900">Live Heartbeat Velocity</h2>
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-[10px] font-bold border border-emerald-500/20 uppercase tracking-widest">
+            <h2 className="text-xl font-bold text-slate-900">Live Heartbeat Velocity</h2>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-black border border-emerald-500/20 uppercase tracking-widest">
               <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-              Monitoring
+              Monitoring Active
             </div>
           </div>
           <div className="h-[300px] w-full">
@@ -224,27 +224,27 @@ export const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({ stats, l
               <AreaChart data={MOCK_GRAPH_DATA} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.3}/>
+                    <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.2}/>
                     <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <XAxis 
                   dataKey="time" 
-                  stroke="#475569" 
+                  stroke="#94a3b8" 
                   fontSize={10} 
                   tickLine={false} 
                   axisLine={false} 
-                  tick={{ fill: "#64748b" }}
+                  tick={{ fill: "#64748b", fontWeight: 600 }}
                 />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#0F0F16', borderColor: '#ffffff10', borderRadius: '12px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
-                  itemStyle={{ color: '#e2e8f0', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', borderRadius: '16px', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}
+                  itemStyle={{ color: '#0f172a', fontSize: '12px', fontWeight: '700' }}
                 />
                 <Area 
                   type="monotone" 
                   dataKey="value" 
                   stroke="#0ea5e9" 
-                  strokeWidth={3} 
+                  strokeWidth={4} 
                   fillOpacity={1} 
                   fill="url(#colorValue)" 
                 />
