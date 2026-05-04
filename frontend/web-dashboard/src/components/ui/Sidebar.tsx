@@ -102,16 +102,16 @@ export function Sidebar() {
     <motion.aside 
       initial={false}
       animate={{ width: isCollapsed ? 80 : 280 }}
-      className="h-screen bg-[#0F0F16] border-r border-[#ffffff0a] flex flex-col relative shrink-0 z-20 shadow-2xl shadow-black/80"
+      className="h-screen bg-white border-r border-slate-200 flex flex-col relative shrink-0 z-20 shadow-xl shadow-sky-900/5"
     >
       <div className="flex items-center justify-between p-6 h-20">
         {!isCollapsed && (
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }}
-            className="flex items-center gap-3 font-semibold text-lg tracking-wide text-white"
+            className="flex items-center gap-3 font-semibold text-lg tracking-wide text-slate-900"
           >
-            <div className="w-8 h-8 rounded-full bg-[#7C3AED] flex items-center justify-center shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(14,165,233,0.4)]">
               <span className="text-white text-sm">SA</span>
             </div>
             Smart Admin
@@ -120,7 +120,7 @@ export function Sidebar() {
         
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-colors absolute right-4"
+          className="p-2 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-900 transition-colors absolute right-4"
         >
           {isCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
         </button>
@@ -138,17 +138,17 @@ export function Sidebar() {
                 className={cn(
                   "flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 relative group",
                   isActive 
-                    ? "bg-[#7C3AED]/10 text-white border border-[#7C3AED]/20 shadow-[0_0_15px_rgba(124,58,237,0.1)]" 
-                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                    ? "bg-primary/10 text-primary border border-primary/20 shadow-[0_0_15px_rgba(14,165,233,0.1)]" 
+                    : "text-slate-500 hover:text-slate-900 hover:bg-slate-50"
                 )}
               >
                 {isActive && (
                   <motion.div 
                     layoutId="active-nav-indicator"
-                    className="absolute inset-0 rounded-xl border-[#7C3AED] border opacity-50 pointer-events-none" 
+                    className="absolute inset-0 rounded-xl border-primary border opacity-50 pointer-events-none" 
                   />
                 )}
-                <Icon size={20} className={cn(isActive ? "text-[#7C3AED]" : "text-gray-400 group-hover:text-white")} />
+                <Icon size={20} className={cn(isActive ? "text-primary" : "text-slate-400 group-hover:text-slate-900")} />
                 {!isCollapsed && (
                   <span className="font-medium whitespace-nowrap">{item.name}</span>
                 )}
@@ -160,14 +160,14 @@ export function Sidebar() {
 
       {/* User Status Bar */}
       {!isCollapsed && user && (
-        <div className="p-4 mt-auto border-t border-[#ffffff0a] bg-[#0F0F16]/50 backdrop-blur-sm">
+        <div className="p-4 mt-auto border-t border-slate-200 bg-slate-50/50 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xs font-bold text-white border border-[#ffffff10]">
+            <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-700 border border-slate-300">
               {(user.name || 'U').charAt(0)}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white truncate">{user.name || 'User'}</p>
-              <p className="text-xs text-gray-400 truncate">{user.role}</p>
+              <p className="text-sm font-medium text-slate-900 truncate">{user.name || 'User'}</p>
+              <p className="text-xs text-slate-500 truncate">{user.role}</p>
             </div>
           </div>
         </div>

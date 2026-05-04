@@ -182,9 +182,9 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
           return (
              <Card glass>
               <CardContent className="text-center py-24">
-                <Brain className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-                <h3 className="text-xl font-medium text-white mb-2">Walk-out Prediction System</h3>
-                <p className="text-gray-400">Select an active session to begin predictive risk analysis.</p>
+                <Brain className="h-16 w-16 text-slate-400 mx-auto mb-4" />
+                <h3 className="text-xl font-medium text-slate-900 mb-2">Walk-out Prediction System</h3>
+                <p className="text-slate-500">Select an active session to begin predictive risk analysis.</p>
               </CardContent>
             </Card>
           );
@@ -211,11 +211,11 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
             {/* Overview Header */}
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold gradient-text flex items-center">
-                  <Brain className="h-6 w-6 mr-3" />
+                <h2 className="text-2xl font-bold text-slate-900 flex items-center">
+                  <Brain className="h-6 w-6 mr-3 text-primary" />
                   AI Analytics Overview
                 </h2>
-                <p className="text-gray-400">
+                <p className="text-slate-500">
                   Real-time AI insights and predictive analytics
                 </p>
               </div>
@@ -226,9 +226,9 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
                     type="checkbox"
                     checked={autoRefresh}
                     onChange={(e) => setAutoRefresh(e.target.checked)}
-                    className="rounded border-gray-600 bg-gray-800 text-purple-500"
+                    className="rounded border-slate-300 bg-white text-primary"
                   />
-                  <span className="text-sm text-gray-300">Auto Refresh</span>
+                  <span className="text-sm text-slate-500 font-medium">Auto Refresh</span>
                 </label>
                 
                 <Button
@@ -251,11 +251,11 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
                           <div className="p-2 bg-blue-500/20 rounded-lg">
                             <Users className="h-5 w-5 text-blue-400" />
                           </div>
-                          <span className="text-3xl font-bold text-white">
+                          <span className="text-3xl font-bold text-slate-900">
                             <AnimatedCounter value={analyticsData.totalStudents} />
                           </span>
                         </div>
-                        <p className="text-gray-400 text-sm font-medium">Total Students</p>
+                        <p className="text-slate-500 text-sm font-medium">Total Students</p>
                       </CardContent>
                     </Card>
 
@@ -263,13 +263,13 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between mb-4">
                           <div className="p-2 bg-emerald-500/20 rounded-lg">
-                            <Activity className="h-5 w-5 text-emerald-400" />
+                            <Activity className="h-5 w-5 text-emerald-500" />
                           </div>
-                          <span className="text-3xl font-bold text-white">
+                          <span className="text-3xl font-bold text-slate-900">
                             <AnimatedCounter value={analyticsData.liveVerifications} />
                           </span>
                         </div>
-                        <p className="text-gray-400 text-sm font-medium">Live Verifications</p>
+                        <p className="text-slate-500 text-sm font-medium">Live Verifications</p>
                       </CardContent>
                     </Card>
 
@@ -277,27 +277,27 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between mb-4">
                           <div className="p-2 bg-red-500/20 rounded-lg">
-                            <UserX className="h-5 w-5 text-red-400" />
+                            <UserX className="h-5 w-5 text-red-500" />
                           </div>
-                          <span className="text-3xl font-bold text-white">
+                          <span className="text-3xl font-bold text-slate-900">
                             <AnimatedCounter value={analyticsData.totalAbsences} />
                           </span>
                         </div>
-                        <p className="text-gray-400 text-sm font-medium">Absentees</p>
+                        <p className="text-slate-500 text-sm font-medium">Absentees</p>
                       </CardContent>
                     </Card>
 
-                    <Card glass className="border-[#ff007a]/20">
+                    <Card glass className="border-rose-500/20">
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between mb-4">
-                          <div className="p-2 bg-[#ff007a]/20 rounded-lg shadow-[0_0_10px_rgba(255,0,122,0.5)]">
-                            <AlertTriangle className="h-5 w-5 text-[#ff007a]" />
+                          <div className="p-2 bg-rose-500/10 rounded-lg shadow-sm">
+                            <AlertTriangle className="h-5 w-5 text-rose-500" />
                           </div>
-                          <span className="text-3xl font-bold text-[#ff007a] drop-shadow-[0_0_8px_rgba(255,0,122,0.8)]">
+                          <span className="text-3xl font-bold text-rose-600">
                             <AnimatedCounter value={analyticsData.securityAnomalies} />
                           </span>
                         </div>
-                        <p className="text-gray-400 text-sm font-medium">Security Anomalies</p>
+                        <p className="text-slate-500 text-sm font-medium">Security Anomalies</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -317,45 +317,45 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
             {/* AI Features Status */}
             <Card glass>
               <CardHeader>
-                <h4 className="text-white font-medium">AI Features Status</h4>
-                <p className="text-gray-400 text-sm">Real-time AI processing capabilities</p>
+                <h4 className="text-slate-900 font-bold">AI Features Status</h4>
+                <p className="text-slate-500 text-sm">Real-time AI processing capabilities</p>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="p-4 bg-gray-800/30 rounded-lg border border-gray-700">
+                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                     <div className="flex items-center space-x-3 mb-2">
-                      <Map className="h-5 w-5 text-green-400" />
-                      <span className="text-white font-medium">Spatial Analysis</span>
+                      <Map className="h-5 w-5 text-emerald-500" />
+                      <span className="text-slate-900 font-bold">Spatial Analysis</span>
                     </div>
-                    <p className="text-sm text-green-400">Active</p>
-                    <p className="text-xs text-gray-400 mt-1">Real-time behavior tracking</p>
+                    <p className="text-sm font-bold text-emerald-500">Active</p>
+                    <p className="text-xs text-slate-500 mt-1">Real-time behavior tracking</p>
                   </div>
 
-                  <div className="p-4 bg-gray-800/30 rounded-lg border border-gray-700">
+                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                     <div className="flex items-center space-x-3 mb-2">
-                      <Target className="h-5 w-5 text-green-400" />
-                      <span className="text-white font-medium">GPS Drift Detection</span>
+                      <Target className="h-5 w-5 text-emerald-500" />
+                      <span className="text-slate-900 font-bold">GPS Drift Detection</span>
                     </div>
-                    <p className="text-sm text-green-400">Active</p>
-                    <p className="text-xs text-gray-400 mt-1">Accuracy monitoring</p>
+                    <p className="text-sm font-bold text-emerald-500">Active</p>
+                    <p className="text-xs text-slate-500 mt-1">Accuracy monitoring</p>
                   </div>
 
-                  <div className="p-4 bg-gray-800/30 rounded-lg border border-gray-700">
+                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                     <div className="flex items-center space-x-3 mb-2">
-                      <Brain className="h-5 w-5 text-green-400" />
-                      <span className="text-white font-medium">Walk-Out Prediction</span>
+                      <Brain className="h-5 w-5 text-emerald-500" />
+                      <span className="text-slate-900 font-bold">Walk-Out Prediction</span>
                     </div>
-                    <p className="text-sm text-green-400">Active</p>
-                    <p className="text-xs text-gray-400 mt-1">Early warning system</p>
+                    <p className="text-sm font-bold text-emerald-500">Active</p>
+                    <p className="text-xs text-slate-500 mt-1">Early warning system</p>
                   </div>
 
-                  <div className="p-4 bg-gray-800/30 rounded-lg border border-gray-700">
+                  <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                     <div className="flex items-center space-x-3 mb-2">
-                      <Activity className="h-5 w-5 text-yellow-400" />
-                      <span className="text-white font-medium">Anomaly Detection</span>
+                      <Activity className="h-5 w-5 text-amber-500" />
+                      <span className="text-slate-900 font-bold">Anomaly Detection</span>
                     </div>
-                    <p className="text-sm text-yellow-400">Learning</p>
-                    <p className="text-xs text-gray-400 mt-1">Pattern recognition</p>
+                    <p className="text-sm font-bold text-amber-500">Learning</p>
+                    <p className="text-xs text-slate-500 mt-1">Pattern recognition</p>
                   </div>
                 </div>
               </CardContent>
@@ -427,8 +427,8 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
             <Card glass>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <h4 className="text-white font-medium">Recent AI Alerts</h4>
-                  <span className="text-gray-400 text-sm">
+                  <h4 className="text-slate-900 font-bold">Recent AI Alerts</h4>
+                  <span className="text-slate-500 text-sm font-medium">
                     {alerts.length} active alerts
                   </span>
                 </div>
@@ -487,7 +487,7 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
   return (
     <div className="space-y-6">
       {/* Navigation Tabs */}
-      <div className="flex space-x-1 p-1 bg-gray-800/30 rounded-lg border border-gray-700">
+      <div className="flex space-x-1 p-1 bg-slate-100 rounded-xl border border-slate-200">
         <Button
           variant={viewMode === 'overview' ? 'primary' : 'glass'}
           size="sm"
