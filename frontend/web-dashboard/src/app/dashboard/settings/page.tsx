@@ -27,8 +27,8 @@ export default function SettingsPage() {
             <SettingsIcon size={24} />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-white tracking-tight">System Settings</h1>
-            <p className="text-slate-400 mt-1">Manage your identity credentials and personal configuration.</p>
+            <h1 className="text-3xl font-bold text-slate-900 tracking-tight">System Settings</h1>
+            <p className="text-slate-500 mt-1">Manage your identity credentials and personal configuration.</p>
           </div>
         </div>
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
@@ -43,50 +43,50 @@ export default function SettingsPage() {
             className="glass-panel overflow-hidden border border-white/5 shadow-2xl relative"
           >
              {/* Gradient Accent */}
-             <div className="h-24 bg-gradient-to-br from-primary/30 via-violet-600/20 to-[#0F0F16]" />
+             <div className="h-24 bg-gradient-to-br from-sky-400/20 via-primary/10 to-transparent" />
              
              <div className="px-6 pb-8 -mt-12">
                <div className="relative inline-block">
-                 <div className="h-24 w-24 rounded-2xl bg-[#13131F] border-4 border-[#05050A] flex items-center justify-center text-primary text-3xl font-bold font-mono shadow-xl">
+                 <div className="h-24 w-24 rounded-2xl bg-white border-4 border-white flex items-center justify-center text-primary text-3xl font-bold font-mono shadow-xl shadow-sky-900/10">
                    {user?.name?.charAt(0)}
                  </div>
-                 <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-emerald-500 border-4 border-[#05050A] flex items-center justify-center">
-                    <CheckCircle2 size={10} className="text-[#05050A]" />
+                 <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-emerald-500 border-4 border-white flex items-center justify-center shadow-sm">
+                    <CheckCircle2 size={10} className="text-white" />
                  </div>
                </div>
 
                <div className="mt-4">
-                 <h2 className="text-xl font-bold text-white tracking-tight">{user?.name}</h2>
+                 <h2 className="text-xl font-bold text-slate-900 tracking-tight">{user?.name}</h2>
                  <p className="text-slate-500 text-sm mb-6 flex items-center gap-2">
                     <Mail size={14} /> {user?.email}
                  </p>
                </div>
 
                <div className="space-y-4">
-                 <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                 <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200">
                     <div className="flex items-center gap-3">
-                       <Award size={16} className="text-violet-400" />
-                       <span className="text-xs text-slate-400 font-medium">Role</span>
+                       <Award size={16} className="text-primary" />
+                       <span className="text-xs text-slate-500 font-medium">Role</span>
                     </div>
-                    <span className="text-xs font-bold text-white uppercase tracking-widest">{user?.role}</span>
+                    <span className="text-xs font-bold text-slate-900 uppercase tracking-widest">{user?.role}</span>
                  </div>
 
-                 <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 shadow-inner">
+                 <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
                     <div className="flex items-center gap-3">
-                       <MapPin size={16} className="text-violet-400" />
-                       <span className="text-xs text-slate-400 font-medium">Access Pool</span>
+                       <MapPin size={16} className="text-primary" />
+                       <span className="text-xs text-slate-500 font-medium">Access Pool</span>
                     </div>
-                    <span className="text-xs font-bold text-white uppercase tracking-widest">AUTHORIZED</span>
+                    <span className="text-xs font-bold text-slate-900 uppercase tracking-widest">AUTHORIZED</span>
                  </div>
                </div>
              </div>
           </motion.div>
 
-          <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10 overflow-hidden relative group cursor-pointer transition-all hover:bg-primary/10">
+          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 overflow-hidden relative group cursor-pointer transition-all hover:bg-slate-100">
              <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform">
                 <BookOpen size={120} />
              </div>
-             <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+             <h4 className="text-sm font-bold text-slate-900 mb-2 flex items-center gap-2">
                 Knowledge Base <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
              </h4>
              <p className="text-xs text-slate-500 leading-relaxed max-w-[80%]">Explore the system documentation for advanced identity management protocols.</p>
@@ -120,10 +120,10 @@ export default function SettingsPage() {
           >
              <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Multi-Factor Authentication</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">Multi-Factor Authentication</h3>
                   <p className="text-slate-500 text-sm">Enhanced biometric verification for administrative actions.</p>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-500 text-[10px] font-black tracking-widest">STUB_V2</span>
+                <span className="px-3 py-1 rounded-full bg-slate-200 text-slate-500 text-[10px] font-black tracking-widest">STUB_V2</span>
              </div>
           </motion.div>
         </div>

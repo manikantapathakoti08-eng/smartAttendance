@@ -22,8 +22,8 @@ export const Input: React.FC<InputProps> = ({
   className,
   ...props
 }) => {
-  const baseClasses = 'w-full px-4 py-3.5 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#7C3AED40] focus:border-[#7C3AED]';
-  const variantClasses = 'bg-[#0F0F16] border border-white/10 text-gray-100 placeholder:text-gray-400 placeholder:font-normal hover:border-white/20';
+  const baseClasses = 'w-full px-4 py-3.5 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary';
+  const variantClasses = 'bg-slate-50 border border-slate-200 text-slate-900 placeholder:text-slate-400 placeholder:font-normal hover:border-slate-300';
   
   const classes = cn(
     baseClasses,
@@ -36,14 +36,14 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-400 mb-2">
+        <label className="block text-sm font-medium text-slate-500 mb-2">
           {label}
         </label>
       )}
       
       <div className="relative">
         {icon && (
-          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400">
             {icon}
           </div>
         )}

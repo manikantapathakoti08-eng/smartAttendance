@@ -71,7 +71,7 @@ export const ChangePasswordForm: React.FC = () => {
         <div className="h-16 w-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 ">
            <CheckCircle2 size={32} />
         </div>
-        <h3 className="text-xl font-bold text-white mb-2">Password Updated</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">Password Updated</h3>
         <p className="text-slate-400 text-sm mb-6">Your security credentials have been successfully updated across the system.</p>
         <Button variant="secondary" onClick={() => setSuccess(false)}>
            Done
@@ -83,13 +83,13 @@ export const ChangePasswordForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
+        <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest flex items-center gap-2">
            <Shield size={16} className="text-primary" /> Security Credentials
         </h3>
         <button 
           type="button"
           onClick={() => setShowPasswords(!showPasswords)}
-          className="text-[10px] font-bold text-slate-500 hover:text-white transition-colors uppercase tracking-tight flex items-center gap-1.5"
+          className="text-[10px] font-bold text-slate-500 hover:text-slate-900 transition-colors uppercase tracking-tight flex items-center gap-1.5"
         >
           {showPasswords ? <EyeOff size={12} /> : <Eye size={12} />} {showPasswords ? "Hide Passwords" : "Show Passwords"}
         </button>
@@ -160,9 +160,9 @@ export const ChangePasswordForm: React.FC = () => {
         </Button>
       </div>
 
-      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
+      <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
          <p className="text-[10px] text-slate-500 leading-relaxed font-medium">
-            <span className="text-slate-400 font-bold block mb-1">Security Note:</span>
+            <span className="text-slate-700 font-bold block mb-1">Security Note:</span>
             Updating your password will invalidate all current session signatures across your linked devices for security enforcement.
          </p>
       </div>
