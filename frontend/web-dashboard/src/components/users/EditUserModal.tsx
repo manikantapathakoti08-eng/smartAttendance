@@ -36,12 +36,15 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
   const [saveSuccess, setSaveSuccess] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && user) {
       const loadInitialData = async () => {
-        await fetchDepartments();
-        // Since the user object might use department names, find the department ID to load sections
-        if (user?.department) {
-          const dept = departments.find(d => d.label === user.department);
+        const currentDepts = await fetchDepartments();
+        
+        // Use the returned data directly to avoid closure stale state
+        if (user.department && currentDepts.length > 0) {
+          const dept = currentDepts.find((d: DropdownDTO) => 
+            d.label === user.department || d.id === user.department
+          );
           if (dept) {
             await fetchSections(dept.id);
           }
@@ -49,14 +52,16 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
       };
       loadInitialData();
     }
-  }, [isOpen]);
+  }, [isOpen, user]);
 
   const fetchDepartments = async () => {
     try {
       const data = await userManagementService.getDepartments();
       setDepartments(data);
+      return data; // Return data for immediate use in effects
     } catch (err) {
       console.error('Failed to fetch departments');
+      return [];
     }
   };
 
@@ -138,7 +143,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               {/* Basic Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
                   <Input 
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -147,7 +152,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Email Address</label>
                   <Input 
                     type="email"
                     value={formData.email}
@@ -157,7 +162,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">User Role</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">User Role</label>
                   <select 
                     value={formData.role}
                     onChange={(e) => setFormData({...formData, role: e.target.value})}
@@ -173,7 +178,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               {/* Status & Department */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Account Status</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Account Status</label>
                   <select 
                     value={formData.status}
                     onChange={(e) => setFormData({...formData, status: e.target.value as any})}
@@ -188,7 +193,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Department</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Department</label>
                   <select 
                     value={formData.department}
                     onChange={(e) => handleDepartmentChange(e.target.value)}
@@ -203,7 +208,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
 
                 {formData.role === 'STUDENT' && (
                   <div className="space-y-2">
-                    <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Section</label>
+                    <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Section</label>
                     <select 
                       value={formData.sectionId}
                       onChange={(e) => setFormData({...formData, sectionId: e.target.value})}
