@@ -177,16 +177,6 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
           />
         );
 
-      case 'gps':
-        return (
-          <GPSDriftDetection
-            studentId={selectedStudentId}
-            sessionId={selectedSession}
-            departmentId={departmentId}
-            sectionId={sectionId}
-          />
-        );
-
       case 'walkout':
         if (!selectedSession) {
           return (
@@ -205,32 +195,6 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
             departmentId={departmentId}
             sectionId={sectionId}
           />
-        );
-
-      case 'profiles':
-        return (
-          <Card glass>
-            <CardContent className="text-center py-12">
-              <Users className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-              <h4 className="text-xl font-semibold text-white mb-2">Student AI Profiles</h4>
-              <p className="text-gray-400">
-                Individual student behavior analysis coming soon
-              </p>
-            </CardContent>
-          </Card>
-        );
-
-      case 'models':
-        return (
-          <Card glass>
-            <CardContent className="text-center py-12">
-              <BarChart3 className="h-16 w-16 text-gray-500 mx-auto mb-4" />
-              <h4 className="text-xl font-semibold text-white mb-2">AI Model Performance</h4>
-              <p className="text-gray-400">
-                Model metrics and performance monitoring coming soon
-              </p>
-            </CardContent>
-          </Card>
         );
 
       case 'assistant':
@@ -545,16 +509,6 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
         </Button>
         
         <Button
-          variant={viewMode === 'gps' ? 'primary' : 'glass'}
-          size="sm"
-          onClick={() => setViewMode('gps')}
-          className="flex-1"
-        >
-          <Target className="h-4 w-4 mr-2" />
-          GPS
-        </Button>
-        
-        <Button
           variant={viewMode === 'walkout' ? 'primary' : 'glass'}
           size="sm"
           onClick={() => setViewMode('walkout')}
@@ -562,26 +516,6 @@ export const AIAnalyticsDashboard: React.FC<AIAnalyticsDashboardProps> = ({
         >
           <Brain className="h-4 w-4 mr-2" />
           Walk-Out
-        </Button>
-        
-        <Button
-          variant={viewMode === 'profiles' ? 'primary' : 'glass'}
-          size="sm"
-          onClick={() => setViewMode('profiles')}
-          className="flex-1"
-        >
-          <Users className="h-4 w-4 mr-2" />
-          Profiles
-        </Button>
-        
-        <Button
-          variant={viewMode === 'models' ? 'primary' : 'glass'}
-          size="sm"
-          onClick={() => setViewMode('models')}
-          className="flex-1"
-        >
-          <Activity className="h-4 w-4 mr-2" />
-          Models
         </Button>
 
         {/* 
