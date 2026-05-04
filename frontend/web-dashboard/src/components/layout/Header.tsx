@@ -28,17 +28,17 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
 
   return (
     <header className={cn(
-      'bg-[#0F0F16]/80 backdrop-blur-xl border-b border-white/5 px-6 py-4 sticky top-0 z-30 shadow-xl shadow-black/40',
+      'bg-white/80 backdrop-blur-xl border-b border-slate-200 px-6 py-4 sticky top-0 z-30 shadow-xl shadow-sky-900/5',
       className
     )}>
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/dashboard/settings">
-            <Button variant="glass" size="sm" className="hover:text-primary transition-colors">
+            <Button variant="glass" size="sm" className="text-slate-500 hover:text-primary transition-colors">
               <Settings className="h-4 w-4" />
             </Button>
           </Link>
-          <h1 className="text-2xl font-semibold text-white tracking-tight">
+          <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">
             Smart Attendance
           </h1>
         </div>
@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
           <Button
             variant="glass"
             size="sm"
-            className="relative"
+            className="relative text-slate-500 hover:text-slate-900"
           >
             <Bell className="h-4 w-4" />
             <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full"></span>
@@ -57,15 +57,15 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
           {/* User Menu */}
           <div className="flex items-center space-x-3">
             <div className="text-right">
-              <p className="text-sm font-medium text-white">
+              <p className="text-sm font-medium text-slate-900">
                 {user.name}
               </p>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-slate-500">
                 {user.role.replace('_', ' ')}
               </p>
             </div>
             
-            <div className="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-r from-sky-400 to-primary flex items-center justify-center shadow-md shadow-sky-500/20">
               <User className="h-4 w-4 text-white" />
             </div>
           </div>
@@ -75,6 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
             variant="glass"
             size="sm"
             onClick={handleLogout}
+            className="text-slate-500 hover:text-rose-600 hover:bg-rose-50"
           >
             <LogOut className="h-4 w-4" />
           </Button>
