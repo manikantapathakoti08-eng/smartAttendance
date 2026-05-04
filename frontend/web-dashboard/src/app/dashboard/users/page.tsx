@@ -75,8 +75,8 @@ export default function UsersPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white tracking-tight">User Management</h1>
-          <p className="text-slate-400 mt-1">Manage and audit system identities.</p>
+          <h1 className="text-3xl font-bold text-slate-900 tracking-tight">User Management</h1>
+          <p className="text-slate-600 mt-1">Manage and audit system identities.</p>
         </div>
 
         <div className="flex items-center gap-3 w-full sm:w-auto relative">
@@ -94,7 +94,7 @@ export default function UsersPage() {
                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                className="absolute top-full right-0 mt-2 w-56 glass-panel p-2 z-50 shadow-2xl border border-white/10"
+                className="absolute top-full right-0 mt-2 w-56 glass-panel p-2 z-50 shadow-2xl border border-slate-200 bg-white"
               >
                 <div className="px-3 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Filter by Role</div>
                 {(["ALL", Role.STUDENT, Role.FACULTY, Role.ADMIN, Role.SUPER_ADMIN] as const).map((role) => (
@@ -105,7 +105,7 @@ export default function UsersPage() {
                       setIsFilterOpen(false);
                     }}
                     className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
-                      activeRole === role ? "bg-primary/20 text-white" : "text-slate-400 hover:bg-white/5 hover:text-white"
+                      activeRole === role ? "bg-primary/20 text-slate-900" : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                     }`}
                   >
                     {role === "ALL" ? "All Identities" : role.replace("_", " ")}
@@ -125,12 +125,12 @@ export default function UsersPage() {
       <div className="glass-panel p-6 shadow-2xl overflow-hidden flex flex-col">
         
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-          <div className="flex items-center bg-obsidian-800/80 rounded-xl px-4 py-2.5 border border-white/5 w-full max-w-md shadow-inner focus-within:border-primary/40 transition-colors">
+          <div className="flex items-center bg-slate-50 rounded-xl px-4 py-2.5 border border-slate-200 w-full max-w-md shadow-inner focus-within:border-primary/40 transition-colors">
             <Search size={18} className="text-slate-400 mr-2" />
             <input 
               type="text" 
               placeholder="Search by name, email, or Reg No..." 
-              className="bg-transparent border-none outline-none text-sm text-white w-full placeholder:text-slate-500"
+              className="bg-transparent border-none outline-none text-sm text-slate-900 w-full placeholder:text-slate-500"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -170,7 +170,7 @@ export default function UsersPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm whitespace-nowrap">
             <thead>
-              <tr className="border-b border-white/10 text-slate-400 bg-white/[0.02]">
+              <tr className="border-b border-slate-200 text-slate-600 bg-slate-50">
                 <th className="px-6 py-4 font-medium rounded-tl-xl">Identify</th>
                 <th className="px-6 py-4 font-medium">Role</th>
                 <th className="px-6 py-4 font-medium">Department</th>
@@ -179,7 +179,7 @@ export default function UsersPage() {
                 <th className="px-6 py-4 font-medium rounded-tr-xl">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-slate-200">
               {loading ? (
                 Array.from({ length: 5 }).map((_, i) => (
                   <tr key={i}>
@@ -198,7 +198,7 @@ export default function UsersPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="hover:bg-white/[0.04] transition-all cursor-pointer border-l-2 border-transparent hover:border-primary/40"
+                    className="hover:bg-slate-50 transition-all cursor-pointer border-l-2 border-transparent hover:border-primary/40"
                     onClick={() => router.push(`/dashboard/users/${user.id}`)}
                   >
                     <td className="px-6 py-4">
@@ -207,13 +207,13 @@ export default function UsersPage() {
                           {user.name.charAt(0)}
                         </div>
                         <div>
-                          <p className="font-medium text-slate-200">{user.name}</p>
+                          <p className="font-medium text-slate-900">{user.name}</p>
                           <p className="text-xs text-slate-500">{user.registrationNumber}</p>
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-slate-300">{user.role}</td>
-                    <td className="px-6 py-4 text-slate-300">{user.department}</td>
+                    <td className="px-6 py-4 text-slate-700">{user.role}</td>
+                    <td className="px-6 py-4 text-slate-700">{user.department}</td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded">
@@ -250,7 +250,7 @@ export default function UsersPage() {
           
           {!loading && filteredUsers.length === 0 && (
             <div className="py-20 text-center flex flex-col items-center">
-              <div className="h-16 w-16 rounded-full bg-white/[0.03] border border-white/5 flex items-center justify-center text-slate-600 mb-4">
+              <div className="h-16 w-16 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-600 mb-4">
                  <Search size={32} />
               </div>
               <p className="text-slate-500 font-medium">Identity scan complete: No matching records found.</p>

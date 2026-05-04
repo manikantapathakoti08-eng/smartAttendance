@@ -104,8 +104,8 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
         <div className="h-20 w-20 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6">
            <AlertCircle size={40} />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-2">Identity Not Found</h2>
-        <p className="text-slate-400 max-w-md mb-8">{error || "The requested user profile does not exist or access was denied."}</p>
+        <h2 className="text-2xl font-bold text-slate-900 mb-2">Identity Not Found</h2>
+        <p className="text-slate-500 max-w-md mb-8">{error || "The requested user profile does not exist or access was denied."}</p>
         <Button variant="secondary" onClick={() => router.push('/dashboard/users')}>
            Back to User Management
         </Button>
@@ -122,16 +122,16 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
         <div className="flex items-center gap-4">
           <button 
             onClick={() => router.push('/dashboard/users')}
-            className="p-2.5 hover:bg-white/5 rounded-xl border border-white/5 transition-all text-slate-400 hover:text-white"
+            className="p-2.5 hover:bg-slate-50 rounded-xl border border-slate-200 transition-all text-slate-500 hover:text-slate-900"
           >
             <ArrowLeft size={20} />
           </button>
           <div>
-            <h1 className="text-3xl font-bold text-white tracking-tight">Identity Profile</h1>
+            <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Identity Profile</h1>
             <div className="flex items-center gap-2 text-slate-500 text-sm mt-1">
                <span>User Management</span>
                <span>/</span>
-               <span className="text-primary/80">{userDetails.name}</span>
+               <span className="text-primary">{userDetails.name}</span>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
         <div className="flex items-center gap-3">
            <Button 
              variant="secondary" 
-             className="gap-2 border-white/5 active:scale-95 transition-transform"
+             className="gap-2 border-slate-200 active:scale-95 transition-transform"
              onClick={() => setIsActivityLogOpen(true)}
            >
               <History size={16} /> Activity Log
@@ -165,14 +165,14 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
             <div className="h-24 bg-gradient-to-r from-primary/40 to-violet-600/40" />
             <div className="px-6 pb-8 -mt-12 text-center">
               <div className="inline-block relative">
-                <div className="h-24 w-24 rounded-2xl bg-[#13131F] border-4 border-[#0F0F16] flex items-center justify-center text-primary text-3xl font-bold mx-auto shadow-xl">
+                <div className="h-24 w-24 rounded-2xl bg-white border-4 border-white flex items-center justify-center text-primary text-3xl font-bold mx-auto shadow-xl shadow-sky-900/10">
                   {userDetails.name?.charAt(0)}
                 </div>
-                <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-emerald-500 border-4 border-[#0F0F16]" />
+                <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-emerald-500 border-4 border-white shadow-sm" />
               </div>
               
-              <h2 className="text-xl font-bold text-white mt-4">{userDetails.name}</h2>
-              <p className="text-slate-400 text-sm mb-6">{userDetails.email}</p>
+              <h2 className="text-xl font-bold text-slate-900 mt-4">{userDetails.name}</h2>
+              <p className="text-slate-500 text-sm mb-6">{userDetails.email}</p>
               
               <div className="flex flex-wrap justify-center gap-2 mb-8">
                 <span className="px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
@@ -188,23 +188,23 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
               </div>
 
               <div className="space-y-4 text-left">
-                <div className="flex items-center gap-4 text-sm p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                   <div className="h-8 w-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
+                <div className="flex items-center gap-4 text-sm p-3 rounded-xl bg-slate-50 border border-slate-200">
+                   <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                       <Hash size={16} />
                    </div>
                    <div>
                       <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Registration ID</p>
-                      <p className="text-slate-200 font-mono">{userDetails.registrationNumber}</p>
+                      <p className="text-slate-900 font-mono">{userDetails.registrationNumber}</p>
                    </div>
                 </div>
 
-                <div className="flex items-center gap-4 text-sm p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                <div className="flex items-center gap-4 text-sm p-3 rounded-xl bg-slate-50 border border-slate-200">
                    <div className="h-8 w-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                       <Calendar size={16} />
                    </div>
                    <div>
                       <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Member Since</p>
-                      <p className="text-slate-200">{userDetails.createdAt ? new Date(userDetails.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : "N/A"}</p>
+                      <p className="text-slate-900">{userDetails.createdAt ? new Date(userDetails.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : "N/A"}</p>
                    </div>
                 </div>
               </div>
@@ -218,16 +218,16 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
              transition={{ delay: 0.1 }}
              className="glass-panel p-6"
           >
-             <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
+             <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <Activity size={16} className="text-primary" /> Metrics
              </h3>
              <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                   <p className="text-2xl font-bold text-white">94%</p>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+                   <p className="text-2xl font-bold text-slate-900">94%</p>
                    <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Attendance</p>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                   <p className="text-2xl font-bold text-white">0</p>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+                   <p className="text-2xl font-bold text-slate-900">0</p>
                    <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Alerts</p>
                 </div>
              </div>
@@ -243,7 +243,7 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
              transition={{ delay: 0.1 }}
              className="glass-panel p-8"
            >
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                  <Building2 className="text-primary" /> Academic & Departmental Scope
               </h3>
 
@@ -255,7 +255,7 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                           <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
                              <Layers size={18} />
                           </div>
-                          <span className="text-lg font-medium text-slate-200">{userDetails.department || "No Department Assigned"}</span>
+                          <span className="text-lg font-medium text-slate-900">{userDetails.department || "No Department Assigned"}</span>
                        </div>
                     </div>
 
@@ -263,10 +263,10 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                       <div>
                          <label className="text-[10px] text-slate-500 uppercase tracking-widest font-black block mb-2">Current Batch / Section</label>
                          <div className="flex items-center gap-3">
-                            <div className="p-2.5 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                            <div className="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
                                <Shield size={18} />
                             </div>
-                            <span className="text-lg font-medium text-slate-200">{userDetails.section?.name || "Unassigned"}</span>
+                            <span className="text-lg font-medium text-slate-900">{userDetails.section?.name || "Unassigned"}</span>
                          </div>
                       </div>
                     )}
@@ -276,13 +276,13 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                     <div>
                        <label className="text-[10px] text-slate-500 uppercase tracking-widest font-black block mb-2">Academic Progression</label>
                        <div className="flex gap-4">
-                          <div className="flex-1 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                          <div className="flex-1 p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                              <p className="text-[10px] text-slate-500 font-bold mb-1">YEAR</p>
-                             <p className="text-xl font-bold text-white">{userDetails.totalAcademicYears || "N/A"}</p>
+                             <p className="text-xl font-bold text-slate-900">{userDetails.totalAcademicYears || "N/A"}</p>
                           </div>
-                          <div className="flex-1 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                          <div className="flex-1 p-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                              <p className="text-[10px] text-slate-500 font-bold mb-1">SEMESTER</p>
-                             <p className="text-xl font-bold text-white">{userDetails.currentSemester || "1"}</p>
+                             <p className="text-xl font-bold text-slate-900">{userDetails.currentSemester || "1"}</p>
                           </div>
                        </div>
                     </div>
@@ -301,8 +301,8 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                  <ShieldCheck size={120} />
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                 <ShieldCheck className="text-emerald-400" /> Advanced Security & Auth Core
+              <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                 <ShieldCheck className="text-emerald-500" /> Advanced Security & Auth Core
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
@@ -311,9 +311,9 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                        <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400">
                           <Fingerprint size={22} />
                        </div>
-                       <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-[10px] font-black text-emerald-400 tracking-tighter">SECURE</span>
+                       <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-[10px] font-black text-emerald-500 tracking-tighter">SECURE</span>
                     </div>
-                    <h4 className="font-bold text-white mb-1">Biometric Hash</h4>
+                    <h4 className="font-bold text-slate-900 mb-1">Biometric Hash</h4>
                     <p className="text-xs text-slate-500 mb-4 font-mono break-all">{userDetails.biometricSignature || "FINGERPRINT_STUB_PENDING"}</p>
                     <div className="flex items-center gap-2 text-emerald-400 text-[11px] font-bold uppercase tracking-widest">
                        <CheckCircle2 size={14} /> Identity Verified
@@ -326,12 +326,12 @@ export default function UserDetailsPage({ params }: { params: Promise<{ id: stri
                           <Smartphone size={22} />
                        </div>
                     </div>
-                    <h4 className="font-bold text-white mb-1">Hardware Bound ID</h4>
+                    <h4 className="font-bold text-slate-900 mb-1">Hardware Bound ID</h4>
                     <p className="text-xs text-slate-500 mb-4 font-mono">{userDetails.deviceId || "UNBOUND_DEVICE"}</p>
                     {userDetails.deviceId ? (
                       <button 
                         className={`text-[11px] font-bold transition-colors flex items-center gap-2 uppercase tracking-widest ${
-                          resetDeviceLoading ? 'opacity-50 cursor-not-allowed text-slate-400' : 'text-primary hover:text-white'
+                          resetDeviceLoading ? 'opacity-50 cursor-not-allowed text-slate-400' : 'text-primary hover:text-slate-900'
                         }`}
                         onClick={handleResetDevice}
                         disabled={resetDeviceLoading}

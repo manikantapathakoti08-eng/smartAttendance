@@ -42,15 +42,15 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#05050A] space-y-8 max-w-5xl mx-auto pb-16 pt-8 px-6">
+    <div className="min-h-screen bg-slate-50 space-y-8 max-w-5xl mx-auto pb-16 pt-8 px-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-semibold text-white tracking-tight">Onboard New User</h1>
-        <p className="text-gray-400 mt-2 text-base">Select a role to provision a new identity into the system.</p>
+        <h1 className="text-3xl font-semibold text-slate-900 tracking-tight">Onboard New User</h1>
+        <p className="text-slate-500 mt-2 text-base">Select a role to provision a new identity into the system.</p>
       </div>
 
-      {/* Role Tabs — Forced Hex-Code Obsidian */}
-      <div className="flex space-x-2 bg-[#0F0F16] p-1.5 rounded-xl border border-[#ffffff0a] max-w-md">
+      {/* Role Tabs — Light Theme */}
+      <div className="flex space-x-2 bg-white p-1.5 rounded-xl border border-slate-200 max-w-md shadow-sm">
         {availableTabs.map(tab => {
           const isActive = activeTab === tab.key;
           return (
@@ -59,8 +59,8 @@ export default function OnboardingPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`relative flex-1 flex items-center justify-center py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 border ${
                 isActive
-                  ? 'bg-[#7C3AED] text-white shadow-[0_0_20px_rgba(124,58,237,0.4)] border-[#8B5CF680]'
-                  : 'text-[#9ca3af] hover:text-white hover:bg-[#ffffff0a] border-transparent'
+                  ? 'bg-primary text-white shadow-[0_0_20px_rgba(14,165,233,0.4)] border-primary'
+                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 border-transparent'
               }`}
             >
               {tab.icon}
@@ -102,8 +102,8 @@ export default function OnboardingPage() {
                <CheckCircle2 size={48} />
             </motion.div>
 
-            <h2 className="text-3xl font-bold text-white mb-2 relative z-10">Onboarding Successful</h2>
-            <p className="text-slate-400 mb-10 max-w-md relative z-10">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2 relative z-10">Onboarding Successful</h2>
+            <p className="text-slate-500 mb-10 max-w-md relative z-10">
                {newUserData?.name || 'User'} has been correctly provisioned and their identity hash is now live in the system.
             </p>
 
