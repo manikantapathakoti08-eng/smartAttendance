@@ -115,19 +115,19 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl bg-[#0F0F16] border border-white/10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
+          className="relative w-full max-w-2xl bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-2xl shadow-sky-900/10"
         >
           {/* Header */}
-          <div className="px-8 py-6 border-b border-white/5 flex items-center justify-between">
+          <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
             <div>
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+              <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                 <User className="text-primary" /> Edit Identity
               </h2>
               <p className="text-slate-500 text-sm mt-1">Modify account details for {user.name}</p>
             </div>
             <button 
               onClick={onClose}
-              className="p-2 hover:bg-white/5 rounded-xl transition-colors text-slate-400 hover:text-white"
+              className="p-2 hover:bg-slate-100 rounded-xl transition-colors text-slate-400 hover:text-slate-600"
             >
               <X size={24} />
             </button>
@@ -138,32 +138,30 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               {/* Basic Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Full Name</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Full Name</label>
                   <Input 
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="Enter full name"
-                    glass
                     required
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Email Address</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</label>
                   <Input 
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="email@example.com"
-                    glass
                     required
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">User Role</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">User Role</label>
                   <select 
                     value={formData.role}
                     onChange={(e) => setFormData({...formData, role: e.target.value})}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-medium"
                   >
                     <option value="STUDENT">Student</option>
                     <option value="FACULTY">Faculty</option>
@@ -175,45 +173,45 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               {/* Status & Department */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Account Status</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Account Status</label>
                   <select 
                     value={formData.status}
                     onChange={(e) => setFormData({...formData, status: e.target.value as any})}
-                    className={`w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all ${
-                      formData.status === 'ACTIVE' ? 'text-emerald-400' : 'text-accent'
+                    className={`w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-bold ${
+                      formData.status === 'ACTIVE' ? 'text-emerald-600' : 'text-red-500'
                     }`}
                   >
-                    <option value="ACTIVE">Active</option>
-                    <option value="INACTIVE">Inactive</option>
-                    <option value="SUSPENDED">Suspended</option>
+                    <option value="ACTIVE" className="text-emerald-600">Active</option>
+                    <option value="INACTIVE" className="text-slate-600">Inactive</option>
+                    <option value="SUSPENDED" className="text-red-600">Suspended</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Department</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Department</label>
                   <select 
                     value={formData.department}
                     onChange={(e) => handleDepartmentChange(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-medium"
                   >
                     <option value="">Select Department</option>
                     {departments.map(dept => (
-                      <option key={dept.id} value={dept.label}>{dept.label}</option>
+                      <option key={dept.id} value={dept.label} className="text-slate-900">{dept.label}</option>
                     ))}
                   </select>
                 </div>
 
                 {formData.role === 'STUDENT' && (
                   <div className="space-y-2">
-                    <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Section</label>
+                    <label className="text-xs font-black uppercase tracking-widest text-slate-400 ml-1">Section</label>
                     <select 
                       value={formData.sectionId}
                       onChange={(e) => setFormData({...formData, sectionId: e.target.value})}
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-medium"
                     >
                       <option value="">Select Section</option>
                       {sections.map(section => (
-                        <option key={section.id} value={section.id}>{section.label}</option>
+                        <option key={section.id} value={section.id} className="text-slate-900">{section.label}</option>
                       ))}
                     </select>
                   </div>
@@ -225,7 +223,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-6 p-4 rounded-2xl bg-accent/10 border border-accent/20 text-accent text-sm flex items-center gap-3"
+                className="mt-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-600 text-sm flex items-center gap-3"
               >
                 <AlertCircle size={18} /> {error}
               </motion.div>
@@ -235,17 +233,17 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="mt-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm flex items-center gap-3"
+                className="mt-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-sm flex items-center gap-3"
               >
                 <CheckCircle2 size={18} /> Identity updated successfully!
               </motion.div>
             )}
 
             <div className="mt-8 flex justify-end gap-3">
-              <Button type="button" variant="secondary" onClick={onClose} disabled={loading}>
+              <Button type="button" variant="secondary" onClick={onClose} disabled={loading} className="px-6">
                 Cancel
               </Button>
-              <Button type="submit" variant="primary" className="px-8 shadow-lg shadow-primary/20" disabled={loading}>
+              <Button type="submit" variant="primary" className="px-8 shadow-lg shadow-primary/20 font-bold" disabled={loading}>
                 {loading ? 'Saving...' : (
                   <>
                     <Save size={18} className="mr-2" /> Save Changes
