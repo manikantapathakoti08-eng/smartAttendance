@@ -102,7 +102,7 @@ export default function HallPassHub() {
           <p className="text-slate-400 mt-1">Real-time student exit request management</p>
         </div>
         
-        <div className="flex bg-slate-500 backdrop-blur-xl p-1 rounded-xl border border-slate-200/60">
+        <div className="flex bg-slate-100/80 backdrop-blur-xl p-1 rounded-xl border border-slate-200/60">
           <button
             onClick={() => setActiveTab('pending')}
             className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${

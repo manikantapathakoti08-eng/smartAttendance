@@ -865,7 +865,7 @@ export const RoomCreationForm: React.FC<RoomCreationFormProps> = ({
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {formData.boundaryPoints.map((coord, idx) => (
-                    <div key={idx} className="bg-slate-500 p-3 rounded-xl border border-slate-100">
+                    <div key={idx} className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-slate-200 shadow-sm">
                       <p className="text-[10px] text-gray-500 font-bold uppercase mb-1">Corner {idx + 1}</p>
                       <p className="text-xs text-emerald-300 font-mono tracking-tighter">
                         {coord.latitude.toFixed(7)}, {coord.longitude.toFixed(7)}

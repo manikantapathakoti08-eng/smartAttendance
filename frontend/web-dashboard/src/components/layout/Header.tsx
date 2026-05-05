@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/dashboard/settings">
-            <Button variant="glass" size="sm" className="text-slate-500 hover:text-primary transition-colors">
+            <Button variant="glass" size="sm" className="text-slate-700 hover:text-primary transition-colors">
               <Settings className="h-4 w-4" />
             </Button>
           </Link>
@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
           <Button
             variant="glass"
             size="sm"
-            className="relative text-slate-500 hover:text-slate-900"
+            className="relative text-slate-700 hover:text-slate-900"
           >
             <Bell className="h-4 w-4" />
             <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full"></span>
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
             variant="glass"
             size="sm"
             onClick={handleLogout}
-            className="text-slate-500 hover:text-rose-600 hover:bg-rose-50"
+            className="text-slate-600 hover:text-rose-600 hover:bg-rose-50"
           >
             <LogOut className="h-4 w-4" />
           </Button>

@@ -16,7 +16,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       secondary: "bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm",
       danger: "bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-600/20",
       ghost: "bg-transparent hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors border border-transparent",
-      glass: "bg-slate-500 backdrop-blur-md hover:bg-white/80 text-slate-900 border border-slate-200 shadow-sm",
+      glass: "bg-white/70 backdrop-blur-md hover:bg-white/90 text-slate-900 border border-white/50 shadow-sm",
       success: "bg-emerald-500/15 text-emerald-600 hover:bg-emerald-500/25 border border-emerald-500/30",
       error: "bg-red-500/15 text-red-600 hover:bg-red-500/25 border border-red-500/30",
     };
