@@ -52,7 +52,7 @@ export default function StudentHallPassRequest() {
 
     try {
       setRequesting(true);
-      await attendanceService.requestHallPass({
+      await attendanceService.facultyRequestHallPass({
         studentId: user.id,
         sessionId: stats.activeSession.id,
         requestedMinutes: minutes,
@@ -61,7 +61,7 @@ export default function StudentHallPassRequest() {
       setSuccess(true);
       setTimeout(() => {
         router.push('/dashboard');
-      }, 2000);
+      }, 3000);
     } catch (err) {
       console.error('Request failed:', err);
       alert('Failed to submit request. Please try again.');
@@ -90,7 +90,8 @@ export default function StudentHallPassRequest() {
         </motion.div>
         <div>
           <h2 className="text-2xl font-bold text-slate-900 mb-2">Request Submitted</h2>
-          <p className="text-slate-500">Your faculty has been notified. Redirecting to dashboard...</p>
+          <p className="text-slate-500">Your faculty has been notified. Please wait for approval before leaving the classroom.</p>
+          <p className="text-xs text-slate-400 mt-2">Redirecting to dashboard...</p>
         </div>
       </div>
     );
