@@ -20,6 +20,7 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
     name: user?.name || '',
     email: user?.email || '',
     role: user?.role || '',
+    registrationNumber: user?.registrationNumber || '',
     department: user?.department || '',
     sectionId: user?.sectionId || '',
     status: user?.status || 'ACTIVE',
@@ -159,6 +160,14 @@ export const EditUserModal: React.FC<EditUserModalProps> = ({ isOpen, onClose, u
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="email@example.com"
                     required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Registration ID</label>
+                  <Input 
+                    value={formData.registrationNumber}
+                    onChange={(e) => setFormData({...formData, registrationNumber: e.target.value})}
+                    placeholder="Enter Registration ID"
                   />
                 </div>
                 <div className="space-y-2">
