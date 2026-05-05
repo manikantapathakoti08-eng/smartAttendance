@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#eef2f7] text-slate-800 antialiased font-sans min-h-screen selection:bg-primary/30;
+    @apply bg-slate-50 text-slate-800 antialiased font-sans min-h-screen selection:bg-primary/30;
   }
 }
 
