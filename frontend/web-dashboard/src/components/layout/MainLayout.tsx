@@ -75,13 +75,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       href: '/rooms',
       requiredRole: ['ADMIN', 'SUPER_ADMIN'],
     },
-    {
-      id: 'attendance',
-      label: 'Attendance',
-      icon: <Activity className="h-4 w-4" />,
-      href: '/attendance',
-      requiredRole: ['FACULTY', 'STUDENT'],
-    },
+
     {
       id: 'timetable',
       label: 'Timetable',
