@@ -200,6 +200,8 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         <Header />
         
         <main className="flex-1 p-0 relative">
+          {/* Ambient Glow */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-400/5 blur-[120px] rounded-full pointer-events-none -z-10" />
           {children}
         </main>
       </div>
